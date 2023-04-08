@@ -1,0 +1,15 @@
+//default value in function parameters
+function getYearsBeforeRetirement(birthYear, retirementAge=70){
+    //get current year
+    let currentYear=new Date().getFullYear();
+    //calculate age from birth year
+    let age = currentYear-birthYear;
+    //calculaten years left before retirement
+    let yearLeft = retirementAge-age
+    return yearLeft
+
+}
+
+let year=getYearsBeforeRetirement(1990,60)
+
+console.log(year);
