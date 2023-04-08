@@ -1,0 +1,38 @@
+//call and apply method
+
+let john={
+    name: 'John',
+    age:28,
+    occupation:'Teacher',
+    greetings:function(style,timeofDay){
+        switch(style){
+            case 'formal':
+                console.log(`Good ${timeofDay} ladies and gentleman. My name is ${this.name} and i am ${this.age} years old ${this.occupation}.`);
+                break;
+            case 'friendly':
+                console.log(`Hey there! My name is ${this.name} and i am ${this.age} years old ${this.occupation}.`);
+                break;
+        }
+    }
+}
+// john.greetings('formal','morning');
+
+let mark={
+    name: 'mark',
+    age:30,
+    occupation:'designer',
+}
+//execute  imidiatly
+// john.greetings.call(mark,'formal','morning')
+
+// john.greetings.apply(mark,['formal','evening'])
+
+
+//create copy an execute leter in program
+// let greet=john.greetings.bind(mark,'formal','morning')
+// console.log(greet)
+// greet()
+
+let greet2=john.greetings.bind(mark,'formal','')
+greet2('formal','morning')
+greet2('evening')
