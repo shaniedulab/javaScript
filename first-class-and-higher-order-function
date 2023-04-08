@@ -31,3 +31,26 @@ let fullAges = getresultArray(ages,isFullage)
 
 console.log(fullAges)
 
+// returning a function from within a onether function
+
+function interviewQuestion(job){
+    switch(job){
+        case 'teacher':
+            return function(name){
+                console.log("what subject do you teach "+name);
+            }
+        case 'designer':
+            return function(name){
+                console.log(name+' can you design');
+            }
+        default:
+            return function(name){
+                console.log("hi how are you doing today?");
+            }
+    }
+}
+
+let teache=interviewQuestion('teacher')
+console.log(teache);
+teache('teacher')
+interviewQuestion('designer')('john')
