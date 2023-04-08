@@ -1,0 +1,25 @@
+//Function Expression in javaScript
+
+//function declaration and function statement
+function fun1(){
+    console.log("fin1");
+}
+fun1();
+
+//functinon expression
+//assign an anonymous function to a variable
+//an anonymous function in a function without name
+// fun2();  //Cannot access 'fun2' before initialization
+let fun2=function(){
+    console.log("fun2");
+};
+
+console.log(fun2);
+console.log(fun2());
+
+fun2();
+
+let x=fun2;
+x();
+
+//different between function execution and function declaration
