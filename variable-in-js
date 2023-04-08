@@ -1,0 +1,54 @@
+//diffrent between let and var
+
+// var firstName; //variable declaration
+// firstName='john'; //variable initialization
+
+// var lastName='smith'; //variable declaration and initialization
+
+// console.log(firstName);
+// console.log(lastName);
+
+// let firstName; //variable declaration
+// firstName='john'; //variable initialization
+
+// let lastName='smith'; //variable declaration and initialization
+
+// console.log(firstName);
+// console.log(lastName);
+
+//variables declarations using var keyword function scope
+//variables declarations using let keyword block scope
+
+// function func(){
+//     var x=10;
+//     if(x==10){
+//         let y=100; 
+//         // var y=100;
+//         console.log(y); 
+
+//     }
+//     console.log(y); //y is not defined
+// }
+// func();
+
+
+//variables declarations using var can be redeclear
+// var age=100;
+// var age=40;
+// console.log(age)
+
+//variables declarations using let cannot be redeclear
+
+// let age=100;
+// let age=30;
+// console.log(age)
+
+//variables declarations using var can be use befor its declaration
+//variables declarations using let cannot be use befor its declaration
+// console.log(city);
+// var city='london';
+// console.log(city);
+
+// console.log(city);
+let city='london';
+console.log(city);
