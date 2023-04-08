@@ -1,0 +1,33 @@
+//first class function And higher order function
+
+//passing function as argument
+/*************************************** */
+
+let birthYears=[1990,1989,2007,2005,1995,2011]
+
+function getresultArray(arr,func){
+    let result=[]
+    for(let i=0;i<arr.length;i++){
+        let value=func(arr[i])
+        result.push(value)
+    }
+    return result;
+}
+
+function calculateAge(birthYear){
+    return 2021-birthYear;
+}
+
+let ages=getresultArray(birthYears,calculateAge)
+
+console.log(ages)
+
+
+function isFullage(age){
+    return age >= 18
+}
+
+let fullAges = getresultArray(ages,isFullage)
+
+console.log(fullAges)
+
