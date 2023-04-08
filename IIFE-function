@@ -1,0 +1,38 @@
+//IIFE immediately invoked function expression
+// {
+//     let a=100;
+//     const b='hello';
+// }
+
+// console.log(a);
+// console.log(b);
+
+// {
+//     var c='world';
+// }
+// console.log(c);
+
+// function func(){
+//     var c='world';
+// }
+// // func()
+// console.log(c);
+
+//1.create a function  expression 
+//2. wrap thie function expression within parentheses
+//3. use another set of parentheses to execute the function immediately
+(function(name,age){
+    var a=100;
+    var b=100;
+    console.log("func() called",name,age);
+})('john',30);
+
+
+//IIFE immediately invoked function expression with ()=>{} function
+(()=>{
+    console.log("func() called=>>");
+})();
+
+//use of IIFE
+//1. A scope can only be create using var keyword inside a function
+//2. created a function and declare a private variable in it
