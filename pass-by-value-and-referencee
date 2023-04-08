@@ -1,0 +1,22 @@
+//pass by value and referencee
+let flight='BNB289'
+
+let person={
+    name: 'John',
+    passport: 123456789
+}
+
+function checkIn(flightNum,passenger){
+    passenger.name='Mr. '+passenger.name;
+    flightNum='BNB999';
+    console.log(passenger);
+    if(passenger.passport===123456789){
+        console.log(`${passenger.name} you are checking in for flight ${flightNum}`);
+    }else{
+        console.log("Invalid Passport!");
+    }
+}
+
+checkIn(flight,person)
+console.log(flight);
+console.log(person);
