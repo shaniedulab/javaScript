@@ -155,12 +155,73 @@ lname='sminth'
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
+//javascript arithmetic operators
+//every operators in js return a value
+//unery operators
+//binary operators
+let x=100;
+let y=10;
 
+console.log(x+y);
+console.log(x-y);
+console.log(x*y);
+console.log(x/y);
+
+console.log(x%y);//reminder
+console.log(23%3);//reminder
+
+console.log(2**3); // 2*2*2 =2 power of 3
+
+//number converted to string
+//+ 
+//NaN
+
+//boolean and numeric
+//true====>1
+//false====>0
+console.log(10-true);
+console.log(10/false);
+
+//undefined -NaN
+
+console.log(10-undefined);
+
+//null--->0
+console.log(10-null);
+console.log(10/null);
 
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
+//javascript basic operators
 
+//Assignment operator - =
+//shorthand assignment operator
+/*
+    +=
+    -=
+    *=
+    /=
+*/
+let x=10;
+console.log(y=100);
+
+//increment and decrement operators
+// ++ and --
+let b=10
+console.log(b++);
+console.log(b--);
+
+//prefix notation ++x , --x
+//postfix notation x++ , x--
+
+//diffrent between prefix and postfix notation
+//prefix - valuem is incremented/decremented & new return 
+//postfix -original valuem is return then incremented/decremented 
+
+//Comma operator - evaluates several expressions and return the result of last exprassion
+let result = (3+2,5-4,5*2)
+console.log(result);
 
 
 /////////////////////////////////////////////////////////////////////////////////////////
