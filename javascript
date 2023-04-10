@@ -49,3 +49,35 @@ let City='delhi'; // both variables are different
 
 // variable of value are not changed in program  should in upper case
 let PI=3.14;
+
+
+//dataType
+
+//string
+let str='string'
+//number
+let a=2.2;
+let b=3;
+console.log(10/0);//infinite
+console.log(-10/0);//-infinite
+console.log('nan'/10);//NaN -not a number  if wrong mathomate calculation
+//BigInt=ES2020
+
+//boolean -true, false
+
+let isMarried=false;
+let isEligible=true;
+
+let isGreater=10>5;
+console.log(isGreater);
+
+//Null-null
+
+let age=null
+console.log(age);
+
+//undefined -value id not assigned
+let city;
+console.log(city);
+
+//symbol -
