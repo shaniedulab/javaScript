@@ -126,7 +126,31 @@ console.log('I am ' + age+ ' years old');
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
+//variable declaration : let, const and var
 
+//1. a variable declaration using let keyword can be modified
+//2. we can create empty variable useing let
+let age=21;
+console.log(age);
+age=29; //variable re-initialization or mutation
+console.log(age);
+
+let city;
+city='mumvui';
+
+//const keyword declaration;
+//1. variable value cannot be changed
+//2. we cannot create empty variable useing const keyword
+const birthYear=1991;
+// birthYear=191;
+
+// const dob;
+//let and const was introduced in es6
+
+var fname;
+
+lname='sminth'
+// console.log(lname); //not recomended
 
 
 /////////////////////////////////////////////////////////////////////////////////////////
