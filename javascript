@@ -237,7 +237,7 @@ console.log(exp1);
 let exp2=20+10-10
 console.log(exp2);
 
-//higher precedence operator  execution first and second precedence execute
+//higher precedence operator  execution first and second precedence execute and precedence is same execute as per associativity
 
 
 /////////////////////////////////////////////////////////////////////////////////////////
