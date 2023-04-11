@@ -1,0 +1,296 @@
+/****************************************************
+ * number type in javascript
+ */
+
+
+/*console.log(45===45.0);
+
+//in js number are stored as a floating point number
+//and it store number as 64 bit format
+console.log(0.1+0.2);
+console.log(0.1+0.2===0.3);
+
+//different way to write a number
+// let billion =1000000;
+// let billion =1_000_000;
+let billion =12e6;
+
+console.log(billion);
+
+// writing number in different base
+let x=0b11111111;
+console.log(x);
+
+let y=0o377;
+console.log(y);
+
+let z=0xFF;
+console.log(z);
+
+//convert number to string
+
+let num=2535
+console.log(num.toString());
+console.log(num.toString(2));//binary representation
+console.log(num.toString(8));//octal representation
+console.log(num.toString(16));//hex representation
+
+//convert string to number 
+console.log(Number('30'));
+console.log(Number(+'30'));
+
+console.log(Number('30a'));
+console.log(Number(+'30w'));
+
+console.log(parseInt('37PX'))
+
+console.log(parseInt('3.07PX'))
+
+console.log(parseFloat('3.07PX'))
+
+console.log(parseInt('0xFF',16))
+console.log(parseInt('0xFF',2))
+console.log(parseInt('0xFF',8))
+
+
+console.log(isNaN('ddd'))
+
+console.log(isFinite('15'))
+console.log(isFinite('15px'))
+console.log(isFinite(Infinity))
+
+console.log(Number.isInteger('50'))
+console.log(Number.isInteger(50))*/
+
+
+/******************************************************************
+ * Base Converter //Project
+ */
+
+/******************************************************************
+ * Math Object in JS
+ */
+//Math object in JS a static object
+
+/*
+console.log(Math.PI);
+console.log(Math.SQRT2);//2
+console.log(Math.SQRT1_2);//1/2
+*/
+
+//return neareste integer
+/*
+console.log(Math.round(2.14));
+console.log(Math.round(2.54));
+console.log(Math.round(-2.54));
+
+//rounded up
+console.log(Math.ceil(2.545));
+console.log(Math.ceil(2.5));
+
+//rounded down
+console.log(Math.floor(2.564));
+console.log(Math.floor(2.554));
+
+//return the interger part from a fractional number
+console.log(Math.trunc(2.13));
+console.log(Math.trunc(2.93));
+
+//return sqrt of a given number
+console.log(Math.sqrt(16));
+console.log(Math.sqrt(9));
+
+console.log(Math.max(5,10,23,2,7))
+console.log(Math.min(5,10,23,2,7))
+
+console.log(Math.max(5,'10',23,2,7))
+console.log(Math.min(5,10,23,'2',7))
+
+console.log(Math.trunc(Math.random()*10 )+1); //gernate random number from 1 - 10
+*/
+
+/*********************************************************************
+ * Guess My Number
+ */
+
+/*********************************************************************
+ * Modulus operater in JS
+ */
+/*
+function isEvenOrOdd(num){
+    if(num%2===0){
+        return num+' is even number'
+    }else{
+        return num+' is odd number'
+    }
+}
+console.log(isEvenOrOdd(10));
+console.log(isEvenOrOdd(7));
+
+*/
+
+
+/*************************************************************************
+ * BigInt DataType in JS
+ */
+/*
+console.log(2**53-1);
+console.log(Number.MAX_SAFE_INTEGER);
+
+console.log(Number.MAX_SAFE_INTEGER+1);
+console.log(Number.MAX_SAFE_INTEGER+2);
+
+let y= 52435254252525252523452452345n
+
+console.log(typeof y);
+console.log(y);
+
+let z=BigInt(5492834655259826589265892659286923562893562986)
+console.log(z);
+
+
+console.log(10n-20n);
+// console.log(10n-20); //error
+*/
+/************************************************************************
+ * Working with date and time in JS
+ ************************************************************************/
+/*let now =new Date();
+console.log(now);
+console.log(now.getTime());
+
+
+//Thu Jan 01 1970 05:30:12 GMT+0530 (India Standard Time)
+
+console.log(new Date(12000));
+console.log(new Date(24*60*60*1000));
+console.log(new Date(-24*60*60*1000).getTime());*/
+
+/*
+let d1=new Date('2017-05-03')
+console.log(d1);
+// year,month,date,hours,minutes,second,ms
+let d2=new Date(2019,11,19,5,30,12)
+console.log(d2);
+*/
+
+//Methods of Date znd Time
+
+/*
+let now=new Date();
+console.log(now);
+console.log(now.getTime());
+console.log(now.getFullYear());
+console.log(now.getMonth());
+console.log(now.getDay());
+console.log(now.getDay());
+
+let months=['january','february','march','april','may','june','july','august','september','october','november','december']
+
+console.log(months[now.getMonth()]);
+console.log(now.getDate());
+console.log(now.getHours());
+console.log(now.getMinutes());
+console.log(now.getSeconds());
+
+let days=['Sun', 'Mon', 'Tue', 'Wed', 'Thu']
+console.log(days[now.getDay()]);
+
+//set methods
+now.setFullYear(2021)
+now.setMonth(1)
+console.log(now);
+*/
+//comparing date is easy
+
+
+/***************************************************************************************
+ * Formating date with INIT API
+ **************************************************************************************/
+
+//internationallization api
+/*
+{hour:'numeric'
+    ,minute:'numeric'
+}
+
+
+let now=new Date()
+console.log(now);
+
+let option={
+    day:'numeric',
+    month:'long',
+    year:'2-digit',
+    hour:'numeric',
+    minute:'numeric',
+    weekday:'long'
+}
+
+ //short narrow
+
+
+let local=navigator.language;
+console.log(local);
+let formatedUs=Intl.DateTimeFormat('te-IN').format(now)
+console.log(formatedUs);
+
+let formatedUk=Intl.DateTimeFormat('en-UK').format(now)
+console.log(formatedUk);
+
+let formatedSy=Intl.DateTimeFormat('ar-SY').format(now)
+console.log(formatedSy);
+
+*/
+
+/***************************************************************************************
+ * Formating Numbers with INIT API
+ **************************************************************************************/
+/*
+let num=123456789.564;
+console.log(num);
+
+let options={
+    style:'percent', //percent,currency,unit
+    unit:'mile-per-hour',
+    currency:'EUR' //USD,EUR
+    ,useGrouping:true
+}
+
+let numus=Intl.NumberFormat('en-US',options).format(num);
+console.log(numus);
+
+let numge=Intl.NumberFormat('de-DE').format(num);
+console.log(numge);
+
+let numsy=Intl.NumberFormat('ar-SY').format(num);
+console.log(numsy);
+
+let numuk=Intl.NumberFormat('en-Uk').format(num);
+console.log(numuk);
+*/
+
+/**************************************************************************************
+ * Timer Function in JS
+ *************************************************************************************/
+//setTimeOut()
+//setIntervalOut()
+console.log("bs");
+const timer=setTimeout((name)=>{
+    console.log("name as"+name);
+},3000,'manish')
+console.log("ps..............");
+console.log(timer);
+
+//clearing the timer
+clearTimeout(timer)
+
+////////////////////////////////////////////////////////////////
+
+let timer1=setInterval(()=>{
+    console.log(new Date(2022,3));
+},1000)
+
+console.log(timer1);
+
+clearInterval(timer1)
