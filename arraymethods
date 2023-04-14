@@ -1,0 +1,300 @@
+/*********************************
+ * splice,slice,reverse,concate 
+ ********************************/
+
+//array.from()
+
+// let names=[4,5,7,3,2]
+
+// console.log(names);
+
+// let n=names.slice(2);
+// console.log(n);
+// console.log(names);
+
+// let m=names.splice(2)
+// console.log(m);
+// console.log(names);
+ /*
+let alp=['1','2','3','4','5','6','7','8','9']
+console.log(alp.reverse());
+
+let arr1=[2,3]
+let arr2=[4,5,6]
+
+console.log(arr2.concat(arr1));
+
+console.log([...arr1,...arr2]);
+
+// join() defalult is ,
+
+let joinstr=["javascript", "js"]
+console.log(joinstr.join(' '));
+*/
+
+/*********************************
+ * froEach method in javascript
+ ********************************/
+
+let alp=['1','2','3','4','5','6','7','8','9']
+
+//higher order function //cannot use breake and continue statement here
+// alp.forEach((element,index,array)=>{
+    //if(element===1) continue;
+//     console.log(element,index,array);
+// })
+
+// toFixed() used to show desimal part 35.07 or 54.078677363
+
+
+/*********************************
+ * froEach method in on maps and set
+ ********************************/
+/*
+let emp=new Map([
+    ['empId',101],
+    ['name','Steve'],
+    ['gemder','male'],
+    ['salary',303993]
+])
+
+console.log(emp);
+
+let roles = new Set(['sjhsjs','djdjdj','kjddjsg'])
+
+//lopping over map
+emp.forEach((val,key,map)=>{
+    console.log(val,key,map);
+})
+
+//lopping over set
+roles.forEach((entry,key,set)=>{
+    console.log(entry,key,set);
+})*/
+
+/*********************************
+ * map method in javascript
+ ********************************/
+
+//data transformation methods
+//1. map()
+//2. filter()
+//3. reduce()
+
+// let birth=[1990,9098,2007,1999,203]
+
+// let ages=birth.map((elem,index,arr)=>{
+//     return 2021-elem;
+// })
+// console.log(ages);
+// console.log(birth);
+
+//return type of foreach method is void
+
+
+/*********************************
+ * AT method in javascript
+ ********************************/
+// let birth=[1990,9098,2007,1999,203]
+
+// console.log(birth.at(3));
+// console.log(birth[birth.length-1]);
+// console.log(birth.at(-1));
+
+
+/*********************************
+ * filter method in javascript
+ ********************************/
+// this method is returning a nuw arry based on the condition
+
+/*********************************
+ * reduce method in javascript
+ ********************************/
+
+// voil down all the  elements of the array to a single value.
+// 2 parameter cb and accumelater=0
+// let number=[20,5,30,10]
+
+// console.log(number);
+
+// let no=number.reduce((acc,elem,index,arr)=>{
+//     return acc+elem;
+// },0)
+
+// console.log(no);
+
+// let a=number.reduce((acc,elem,i,arr)=>{
+//     if(acc>elem){
+//         return acc;
+//     }
+//     else{
+//         return elem;
+//     }
+// },number[0])
+
+// console.log(a);
+
+
+/*********************************
+ * find method in javascript
+ ********************************/
+//return sinle value 
+//filter method return array
+
+// let birth=[1990,1998,2003,1999,2007]
+
+// let b=birth.find((elem,i,arr)=>{
+//     return elem>2000;
+// })
+
+// console.log(b);
+
+
+// let birth=[1990,1998,2003,1999,2007]
+
+// let b=birth.filter((elem,i,arr)=>{
+//     return elem>2000;
+// })
+
+// console.log(b);
+
+
+/*********************************
+ * findindex() method in javascript
+ ********************************/
+
+//return the index of first elem in an array which satisfies a condition
+// let birth=[1990,1998,2003,1999,2007]
+
+// //higher order function
+// let c=birth.findIndex((elem,i,arr)=>{
+//     return elem>2000;
+// })
+
+// console.log(c);
+
+
+
+/*********************************
+ * some() and every() method in javascript and includes
+ ********************************/
+// let birth=[1990,1998,2003,1999,2007]
+// let isav=birth.includes(19198)
+
+// console.log(isav);
+
+//return  a boolean value true if any elem in a given array satisfied given condition otherwise  flase
+
+// let s=birth.some((elem,i,arr)=>{
+//     return elem>2008
+// })
+
+// console.log(s);
+
+//every() method in javascript returns a boolean value true if each and every elem in a given array sitisfy the given condition. otherwise flase
+// let e=birth.every((elem,i,arr)=>{
+//     return elem>1999
+// })
+// console.log(e);
+
+
+
+/**************************************************************
+ * flat() & flatmap() method in javascript
+ *************************************************************/
+
+//introduce es2019
+///depth level can assign in parameter
+////flat method
+// let arr1=[10,20,[30,40,50],[60,70,80,90],100]
+// let arr2=[10,20,[30,[40,50]],[[60,70,80],90],100]
+// let arr3=[10,20,[30,[40,50]],[[[60,70],80],80],100]
+
+// let a=arr1.flat();
+// console.log(a);
+
+// let b=arr2.flat(2);
+// console.log(b);
+
+// let c=arr3.flat(3);
+// console.log(c);
+/*
+let employees=[
+    {id:101,name:'john',skills:['html','css','javascript']},
+    {id:101,name:'john',skills:['c#','c','c++']},
+    {id:101,name:'john',skills:['angular','react','view']}
+]
+
+console.log(employees);
+
+let emp=employees.map((elem)=>{
+    return elem.skills
+}).flat()
+
+console.log(emp);
+
+
+// flatmap method
+
+let ska2=employees.flatMap((elem,i,arr)=>{
+    return elem.skills;
+})
+
+console.log(ska2);*/
+
+
+
+/**************************************************************
+ * sorting array in javascript
+ *************************************************************/
+//metuate the original array. sort() and reverse() methed
+
+let birth=[1990,1998,2003,1999,2007]
+let birth1=[7,27,11,9,15,25,101,205]
+console.log(birth1.sort());
+
+// console.log(birth);
+// console.log(birth1.sort().reverse());
+// console.log(birth);
+
+//shorting array in javascript with numerical values
+//return -1:do not swap
+//return 1: swap values
+//return 0: do noting
+// let arr=birth1.sort((curr,next)=>{
+//     if(curr<next){
+//         return -1
+//     }
+//     else{
+//         return 1    
+//     }
+// })
+// console.log(arr);
+
+// let arr1=birth1.sort((curr,next)=>{
+//     if(curr<next){
+//         return 1
+//     }
+//     else{
+//         return -1    
+//     }
+// })
+
+
+// console.log(arr1);
+
+
+// console.log(birth1.sort((curr,next)=>curr-next));
+// console.log(birth1.sort((curr,next)=>next-curr));
+
+let an=['cat', 'Dog', 'Horse', 'elephant', 'bee', 'ant']
+
+console.log(an.sort((curr,next)=>{
+    let x=curr.toLowerCase();
+    let y=next.toLowerCase();
+    if(x<y){
+        return -1
+    }else{
+        return 1
+    }
+}));
