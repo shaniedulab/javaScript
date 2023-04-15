@@ -1,0 +1,535 @@
+'use strict';
+/****************************************************************
+ * WHAT IS Destructuring? & Destructuring an array in javascript
+ ****************************************************************/
+
+//Destructuring is special assignment syntax in javascript that allows us to unpack array or object into a bunch of variable.
+
+// let person= ['john','smith',28,'jhj'];
+
+// let [firstName,lastName,age]=person;
+
+// console.log(firstName,lastName,age);
+//destructuring will not destroy the original array
+// console.log(person);
+
+//we should always use a valid variable name while destructuring
+
+// let [firstName,,age]=person; //, se ommmit value
+
+// console.log(firstName,age);
+
+// let [firstName,,age,name='shani maurya']=person;
+
+// console.log(firstName,age,name);
+
+
+// let person= ['john','smith',[28,'jhj']];
+
+// let [firstName,lastName,[age,name]]=person;
+// console.log(firstName,age,name);
+
+
+/****************************************************************
+ * WHAT IS Destructuring? & Destructuring an object in javascript   
+ ****************************************************************/
+
+// var employee={
+//     name: 'John',
+//     age: 34,
+//     gender: 'male',
+//     area:['london','uk'],
+//     workDetails:{experience:5,company:'google'}
+// }
+
+// let name=employee.name; //this is one way
+//based on employee property name
+//we can also provide aslis name for variables
+// set default5 value that is not in object properties name
+// let{name: firsName,age,gender ,area,lastname='gbjh',workDetails:{experience:exp}}= employee;
+// console.log(firsName,age,gender,area,lastname,exp); 
+
+//mutateing variables values
+// let x=10;
+// let y=20;
+// let obj={x:20,y:30};
+
+// ({x,y}=obj);
+
+// console.log(x,y);
+
+//destructuring obj return by a function
+
+// function fun(){
+//     return {id:101,uname:'js'}
+// }
+
+// let {id,uname}=fun();
+// console.log(id,uname);
+
+
+// let{area:[city,country]}= employee;
+// console.log(city,country); 
+
+
+/****************************************************************
+ * spread operator in javascript   
+ ****************************************************************/
+
+//the spread operator takes in an itterable (e.g. an array or string) and expands it into individual elements.
+
+// let arr=[10,20,30]
+
+// console.log(...arr);
+
+// let str='hello';
+// console.log(...str);
+
+//usecase 1: coping array into anoyher array
+// let newarr=[40,50,56,...arr]
+// console.log(newarr);
+
+//usecase 1: passing element of an array as an argument
+
+// function fun(a,b,c){
+//     return a+b+c;
+// }
+
+// console.log(fun(...arr));
+
+//usecase 1: coming two or more arrays into a single array
+
+// let arr1=[2,3,45,5,6]
+// let arr2=[1,2,3,4,5,6]
+// let arr3=[...arr1, 40,...arr2,]
+// console.log(arr3);
+
+
+/****************************************************************
+ * rest pattern & rest parameter in javascript   
+ ****************************************************************/
+
+//the rest pattern collect rest  of the value into an array or rest of the porperies into an object 
+
+//rest operater looks exactly like the spread oprater, but it does opposite of the spread opreter
+
+/*
+let arr=[10,20,30]
+
+console.log(...arr);
+
+//rest pattern on array
+let numbers=[1,2,3,4,56,7,8]
+let [a,b,...other]=numbers 
+console.log(a,b,other);
+
+//rest pattern on object
+
+let num={x:10,y:12,z:30,u:17}
+let {x,y,...obj}=num
+console.log(x,y,obj);
+
+//rest operator use before assignment operator
+
+//rest parameter //it should last one 
+function addnum(x,y,...a){
+    console.log(a);
+    let sum=x+y;
+    for(let i=0;i<a.length;i++){
+        sum+=a[i];
+    }
+    return sum
+}
+
+console.log(addnum(20,20,30));
+*/
+
+/****************************************************************
+ * Nullish coalescing operater in javascript   
+ ****************************************************************/
+
+//the nullish coalescing operator is used to handle null or undefined values in JS
+//.it is a logical operator.
+//.it is represented by ??. fro example value a??b
+//nullish collecing operator returns the value of the first of first operand if its value is not null or undefined.
+//otherwise it returns the value of second operand.
+//it binary operator 
+
+//short form of terneriy operator
+
+// let a=false;
+// let b='hight not defined';
+// let hight;
+
+// hight = (a == null || a == undefined) ? b : a
+// hight = a ?? b;
+// console.log(hight);
+
+////it is used to handle null or undefined values in JS
+
+
+//OR operator returns the value of the first truthy value
+//truthy value - everything except (0,'',null,undefined,false)
+
+// hight = a || b;
+// console.log(hight);
+
+/****************************************************************
+ * For of loop in javascript   
+ ****************************************************************/
+/*
+let std=[1,2,3,5,6,7,8,9]
+
+let str='jfkgklj ajaklj glkjgskd'
+
+//syntax of for ...of loop
+// for(variable of itterable){
+
+// }
+
+// /Array
+// for(let item of std){
+//     console.log(item);
+// }
+
+// //string
+// for(let item of str){
+//     console.log(item);
+// }
+
+// function countstr(str){
+//     return str.length
+// }
+
+function countstr(str){
+    let count = 0;
+    for(let i of str){
+        count++
+    }
+    return count;
+}
+
+console.log(countstr(str));
+console.log(str.length);
+
+//es6 year 2015
+*/
+
+
+/****************************************************************
+ * ES6 Enhancements in object literal syntex in javascript   
+ ****************************************************************/
+/*
+let workingDays=['mon', 'tue', 'wed', 'thu', 'fri'];
+
+let shift={
+    [workingDays[0]]:'10Am - 7PM',
+    tue:'10Am - 7PM',
+    wed:'10Am - 7PM',
+    [10+30]:'10Am - 7PM',
+    fri:'10Am - 7PM',
+}
+let employee = {
+    id:101,
+    name:'john',
+    bitthDate:1990,
+    workingDays,
+    shift,
+    cal(){
+        console.log('cal');
+    }
+}
+
+console.log(employee);
+employee.cal()
+*/
+
+/****************************************************************
+ * Optional chaing in javascript   
+ ****************************************************************/
+
+//optional chaing is a new feature in JS , introduced in ES2020.
+
+/*
+let user = {
+    name:'john',
+    age:28,
+    gender:'male',
+    hobbies:null,
+    contact:{
+        phone:87684646546,
+        email:'abc@gmail.com',
+        address:{
+            street:'10th main street',
+            area:'Abee wood',
+            city:'london',
+            country:'uk'
+        }
+    }
+}
+
+console.log(user.name);
+console.log(user.bithYear);
+console.log(user.contact.phone);
+console.log(user.contact.city);
+console.log(user.contact.city?.name);
+
+console.log(undefined?.name);
+console.log(null?.name);
+*/
+// console.log(user.hobbies.x);
+
+// if(user.contact.city ===null ||user.contact.city===undefined){
+//     console.log(undefined);
+// }else{
+//     console.log(user.contact.city.name);
+// }
+
+//optional chaing is safe way to access nested object property ,evn if an intermediate property doesn`t exit. it is representerd by ?.
+
+//optional chaing stops the evaluation if the value before ?. is undefined or null and return undefined
+
+
+/****************************************************************
+ * How to loop object in javascript   
+ ****************************************************************/
+
+//when we want to loop over an object , we have different options deepeing upon what we want to loop over. we can loop over
+//1. Object property name
+//2. Object property value
+//3. both on object property and value
+/*
+let user = {
+    name:'john',
+    age:28,
+    occupation:'teacher',
+}
+
+//loop over
+//1. Object property name
+
+let property=Object.keys(user);
+console.log(property);
+
+for(let prop of property){
+    console.log(prop);
+}
+
+//2. Object property value
+
+let property1=Object.values(user);
+console.log(property1);
+
+for(let prop of property1){
+    console.log(prop);
+}
+
+//3. both on object property and value
+
+let entries=Object.entries(user);
+console.log(entries);
+
+for(let entry of entries){
+    console.log(entry[0],':',entry[1]);
+}
+
+for(let [key,value] of entries){
+    console.log(key,':',value);
+}
+*/
+
+
+/****************************************************************
+ * What are sets in javascript   
+ ****************************************************************/
+//ES6 Data structure
+//1. Map
+//2. Set
+
+// set is just a collection of unique values.
+//createing a new set
+
+// let cities = new Set(['london','new york','mumbai','london','delhi'])
+// console.log(cities);
+
+// let random=new Set([12,true,'hello',null])
+// console.log(random);
+
+// let str=new Set(new String('hello'))
+// console.log(str);
+
+// a set is different from an array in the way that:
+//.element of set are unique.
+//. order of elements in the set is irrelevent.
+
+//properties methods of set
+
+// size - returns the number of elements in a set.
+// has() - returns true if a certain element is present in the set.
+// add() - adds a new unique element to the set
+// delete - Delete  an element from the set
+// clear()- delete all the elements of the set
+
+/*
+console.log(cities.size);
+
+console.log(cities.has('london')); 
+console.log(cities.has('tokeyo')); 
+
+console.log(cities.add('tokyo')); 
+console.log(cities); 
+
+console.log(cities.delete('london'));
+
+console.log(cities); 
+
+console.log(cities.clear('london'));
+
+console.log(cities); 
+*/
+
+// for(let city of cities){
+//     console.log(city);
+
+// }
+
+/*
+//1. remove dublicate value from an array
+let names=['john','mark','merry','mark','steve','john']
+
+let maneSet=new Set(names);
+console.log(names);
+console.log(maneSet);
+
+let unnameArray=[...maneSet]
+console.log(unnameArray);
+
+//2. count the number of unique caracteres in a string
+let str1='this is a string';
+
+let strSet=new Set(str1);
+console.log(strSet.size);
+*/
+
+/****************************************************************
+ * What are Maps in javascript   
+ ****************************************************************/
+
+//a map is a data structure that cn be used to store values mapped to a key.
+//just like an object, the data in a map is stored as a key-value pair.
+
+//the different between an object and map is that, the key in a map can be a value of any datatype.
+
+//: the key or propertyes of an object are always string.
+//: the key in a map can be a value of any datatype. they can even be an object an array or another map
+/*
+let question=new Map();
+console.log(question);
+
+//set() - add entries to a map
+// question.set('question','in which lsadldlfhlfhc cv cfmc c');
+// question.set(1,1009);
+
+
+// /we can chain map 
+question.set('question','in which lsadldlfhlfhc cv cfmc c').    set(1,1009).set(2,2002).set(3,2005).set(4,2602).set(5,6676)
+console.log(question);
+
+//retruve values from a map
+let ques=question.get('question')
+console.log(ques);
+
+console.log(question.get(1));
+console.log(question.get(2));
+console.log(question.get(3));
+console.log(question.get(4));
+// console.log(question.get('1')); //undefined
+
+//other uesfull methods of a map
+//has( ) - returns true if the map contains key . else returns false
+
+console.log(question.has('question'))
+console.log(question.has('wrong'))
+
+//size()
+console.log(question.size)
+
+//delete()
+console.log(question.delete(4))
+console.log(question)
+
+//clear()
+console.log(question.clear())
+console.log(question)
+
+//a map is an iterable
+*/
+
+/****************************************************************
+ * createing maps from arrays and object in javascript   
+ ****************************************************************/
+/*
+let user=new  Map([
+    ['name', 'john'],
+    ['age', 12],
+    ['occupation','teacher']
+]);
+
+// user.set('name', 'john');
+// user.set('age', 20);
+
+console.log(user);
+
+//convert an object into a map
+
+let customer={
+    id:101,
+    name:'mark',
+    gender:'male',
+    ciry:'londan'
+}
+
+console.log(Object.entries(customer));
+let cusMap=new Map(Object.entries(customer))
+console.log(cusMap);
+
+//converting  map into a array
+
+let customer2=[...cusMap]
+console.log(customer2);
+
+let customer1=[...cusMap].flat()
+console.log(customer1);
+
+let cus2=[...cusMap.keys()]
+console.log(cus2);
+
+let cusvalue=[...cusMap.values()]
+console.log(cusvalue);
+
+let cusent=[...cusMap.entries()]
+console.log(cusent);
+
+
+//loop map
+
+//keys
+for(let cus of cusMap) {
+    console.log(cus[0]);
+}
+
+//values
+for(let cus of cusMap) {
+    console.log(cus[1]);
+}
+
+//both keys and values
+for(let [key,value] of cusMap) {
+    console.log(key,value);
+}
+*/
+
+/****************************************************************
+ * String methods in javascript   
+ ****************************************************************/
+
