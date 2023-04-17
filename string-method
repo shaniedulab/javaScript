@@ -1,0 +1,276 @@
+/****************************************************************
+ * String methods and property in javascript   
+ ****************************************************************/
+
+//string is a sequence if characters.
+//and it is primity type
+//indexOf(),lastIndexOf(),slice() method
+//length property
+
+// let myString='Javascript is the best';
+// let myString='Hey there!';
+
+// console.log(myString[0]);
+// console.log(myString[5]);
+// console.log('Hello'[2]);
+
+//length property: returns the total number of charrecter in the string
+
+// console.log('Hello'.length);
+// let charCount=myString.length //space is also a character
+// console.log(charCount);
+
+//indexOf() - return the index of first occuration of a character
+
+// let charIndex=myString.indexOf('s')
+// console.log(charIndex);
+// console.log(myString.indexOf('u')); // if char is not present in the string it will be returned -1
+// console.log(myString.indexOf('S')); //it is case sensitive
+// console.log(myString.indexOf('best'));
+
+//lastIndexOf() - return the index of last occuration of a character
+
+// console.log(myString.lastIndexOf('s'));
+// console.log(myString.lastIndexOf('u')); // if char is not present in the string it will be returned -1
+// console.log(myString.lastIndexOf('S')); //it is case sensitive
+
+
+//slice() - extracts a substring from a string
+//argument 1 start index 2 end index
+// console.log(myString.slice(11));
+// console.log(myString.slice(11,16));
+// console.log(myString.slice(-3));
+// console.log(myString.slice(5,-2));
+
+
+//find the first word from a string
+// let index=myString.indexOf(' ')
+// console.log(index);
+// let firstWord=myString.slice(0,index)
+// console.log(firstWord);
+
+//find the last word from a string
+
+// let index=myString.lastIndexOf(' ')
+// console.log(index);
+// let lastWord=myString.slice(index,myString.length)
+// console.log(lastWord);
+
+// let index=myString.lastIndexOf(' ')+1
+// console.log(index);
+// let lastWord=myString.slice(index)
+// console.log(lastWord);
+
+
+////////////////////////////////////////////////////////////////
+/*
+let emp1={name:'John',empCode:'BLR11122P',gender:'Male'}
+let emp2={name:'Mark',empCode:'NYC1322C',gender:'Male'}
+let emp3={name:'Merry',empCode:'LON4321P',gender:'Female'}
+
+function printDetails(emp){
+    let empLocation=getLocation(emp.empCode.slice(0,3))
+    let empType=emp.empCode.slice(-1)==='P'?'Permanent':'Contractor'
+    console.log(`${emp.name} is working from ${empLocation} office and he/she is a ${empType} employee.`);
+}
+
+function getLocation(locationCode){
+    let location;
+    switch(locationCode){
+        case 'BLR':
+            location='Bangalore';
+            break;
+        case 'NYC':
+            location='New work';
+            break;
+        case 'LON':
+            location='London';
+            break;
+        default:
+            location='Unknown location'
+    }
+    return location
+}
+
+printDetails(emp1)
+printDetails(emp2)
+printDetails(emp3)
+
+*/
+
+//toUpperCase()- convert all leter of a string to Upper case
+//toLowerCase()- convert all leter of a string to Lower case
+//and return new string not mutate original string
+
+// let myString='Javascript is the best';
+
+// let toUpper=myString.toUpperCase();
+// console.log(toUpper);
+
+// let toLower=myString.toLowerCase();
+// console.log(toLower);
+
+//worite a function which will update the letter case in a word
+//1. first letter of the word should be in upper case
+//2.rest all other letter should be in lower case
+
+// function updateCase(word){
+//     let lower=word.toLowerCase();
+//     let updatedWord=lower[0].toUpperCase()+lower.slice(1);
+//     console.log(updatedWord);
+// }
+
+// updateCase('weCome')
+// updateCase('HELLOw')
+// updateCase('setev')
+
+
+//shani@gamil.com
+//shanI@gamil.com
+
+// let emilinDb='shani@gamil.com';
+// let emailUser='shanI@gamil.com';
+
+// if(emilinDb ===emailUser.toLowerCase()){
+//     console.log('user logged in successfully');
+// }else{
+//     console.log('emil does not exit');
+// }
+
+//triming spaces before and after a string
+// let str='  Hellow   ';
+// console.log(str);
+
+// //trimStart()- remove spacess from the start of a string
+// console.log(str.trimStart());
+
+// //trimEnd()- remove spacess from the end of a string
+// console.log(str.trimEnd());
+
+// //to remove spaces before and after a string
+// console.log(str.trimStart().trimEnd());
+
+// //use trim()
+
+// console.log(str.trim());
+
+
+//Replacing characters /words with a string // first occurence of character
+//it caseSensitive
+
+// let greet='Hey there. How are you doing today.';
+// let str=greet.replace('.','!')
+// console.log(str);
+
+//replaceall
+// str=greet.replaceAll('.','!')
+// console.log(str);
+
+// str=greet.replace('Hey','H  ellow')
+// console.log(str);
+
+//include() / startWith() / endWith() //return boolean value
+//include() return true if a character or a substraing is present inside a string
+
+// console.log(greet.includes('H'));
+
+//startWith() - return true if a string start with a give character or string.
+
+// console.log(greet.startsWith('Hey'));
+// console.log(greet.startsWith('there'));
+
+//endsWith() - return true if a string end with a give character or string.
+
+// console.log(greet.endsWith('today.'));
+
+
+
+// let str='tis is a string';
+
+// let str2=new String('this. is another string')
+
+// console.log(str);
+// console.log(str2);
+
+//primitive string -> string oject :boxing
+//string object -> primitive string :unboxing
+
+
+// let myString='Javascript is the best';
+// let anotherString='This-is-another-string';
+//split() - split a string into multiple string based ona devider and return an array of string.
+
+// console.log(myString.split(' '));
+// console.log(myString.split('-')); // splite method not apply
+// console.log(anotherString.split('-'));
+
+//get user firstname,middlename, lastname from his fullname.
+// function printNames(fullname){
+//     let [firstName,middleName,lastNmae]=fullname.split(' ');
+//     console.log(firstName,middleName,lastNmae);
+
+// }
+
+// printNames('John Martin Smith')
+
+//join() - join a string element of an array into a single string. with spereter
+
+// let strarray=['my','name','is','john']
+
+// console.log(strarray);
+// console.log(strarray.join(' '));
+
+
+//formate the first letter of each name in uppercase
+// function formatName(fullname){
+//     let formatedName=[];
+//     let names=fullname.split(' ');
+//     console.log(names);
+//     for(let name of names){
+//         let formated=name[0].toUpperCase() + name.slice(1);
+//         formatedName.push(formated);
+//     }
+//     console.log(formatedName.join(' '));
+// }
+
+// formatName('merry ann jordan');
+
+
+//padding methos    - padStart() / padEnd()
+//padding methods add a number of char to a string until
+//the string has a certain desired length
+
+// let myString='Javascript is the best';
+
+// console.log(myString.length);
+// console.log(myString.padStart(30,'*'));
+// console.log(myString.padStart(30,' '));
+
+// console.log(myString.padEnd(30,'*'));
+// console.log(myString.padEnd(30,' '));
+
+// //mask  the credit/debit card details
+
+// function masCardNumber(cardNumber){
+//     // let cardstr=cardNumber.toString()
+//     let cardstr=cardNumber+'';
+
+//     let last=cardstr.slice(-4);
+//     let markedCard=last.padStart(cardstr.length,'*');
+//     console.log(markedCard);
+    
+// }
+
+// masCardNumber(1234567890987654)
+// masCardNumber('098765456543212345')
+
+//repeat = repeats a string for a given numberf of time
+
+console.log('Hello'.repeat(5));
+
+//concate - concatenates tow string
+let str1='Hello';
+let str2='World!';
+
+let str=str1.concat(str2)
+console.log(str);
