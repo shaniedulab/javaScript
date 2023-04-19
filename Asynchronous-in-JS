@@ -1,0 +1,301 @@
+/****************************************************************
+ * Synchronous in javascript   
+ ****************************************************************/
+
+//javaScript is a single threaded programming language. that means there is only one thread which executes all the JavaScript code.
+//Because of this js engine can process only one statement ata time
+
+//in synchronous programming, code is executed line by line in the order od its execution
+//if any part of the code is taking long time in its execution (due to long running opertaion ,such as network access ), then next statement 
+//will have  to wait for its execution to complete.
+
+//most of the code which we write in js is synchronous code.
+
+
+/****************************************************************
+ * Asynchronous in javascript   
+ ****************************************************************/
+//. in Asynchronous programm, we can execute a piece of code asynchronously in the background. an asynchronous code does not block the execution of
+//next line of codes.
+
+//there are many functions amd webApi provided by browsers webapi, which gets executed asynchronously in the background without blocking the
+//execution. one such function is setTimeout() function.
+
+//1. Asynchronous code is non-blocking.
+//2. It does not stop the execution of main code.
+
+// let str='Good Morning';
+// console.log(str);
+// setTimeout(()=>{
+//     alert('this is an alert window!');
+// },5000)
+// console.log('have a good day');
+
+/****************************************************************
+ * AJAX & XNLHttpRequest Object in javascript   
+ ****************************************************************/
+
+//AJAX stands for Asynchronous JavaScript and XML.
+//AJAX isnota promming language, but it is a set of existing web technologies.
+//AJAX helps in feaching data Asynchronous from a remote web server.
+
+// console.log(arr);
+// arr[0]=9
+// console.log(arr);
+
+// function fun(){
+//     const result = [{name:'sasa',age:21},{name:'sdfs',age:45}];
+//     console.log(result);
+//     result[0].lname=222
+//     console.log(result);
+// }
+
+// fun()
+
+
+/****************************************************************
+ * What is a callback Hell in javascript   
+ ****************************************************************/
+
+//Callback Hell, also known as Pyramid od Dhoom is ananti pattern seen in code of asynchronous programming.
+
+//1. Makes the code look messy
+//2. code is less maintainable and less readable.
+//3. more prone to bugs.
+
+/****************************************************************
+ * Promises in javascript   
+ ****************************************************************/
+
+//a promise is a special JS object which is used as a placeholder for the future for the future result of an asynchronous operation.
+
+//a JS promise, promises a result.
+
+// every promise has an executer function that gets executed immediately when we create a promise.
+
+//initially when the promise is created, it is in panding state. the data returned by the promise in pending state is undefined.
+
+//the state of the promise changes to settled when the promise is either resolved or rejected.
+
+//if the promise is resolved, then it returns the resolved data. otherwise it returns the rejected data (i.e some error message).
+
+
+
+// let promise=new Promise((resolved,rejected)=>{
+//     console.log("executer function executed");
+//     // resolved([20,40,60,880])
+//     // rejected("something went wrong")
+// });
+
+// console.log(promise);
+
+//producing code.
+// let promise=new Promise((resolved,rejected)=>{
+//     let xhr=new XMLHttpRequest();
+//     xhr.open('GET','data1.txt',true);
+//     xhr.send();
+//     xhr.onload = function(){
+//         if(xhr.statusText==='OK'){
+//             resolved(xhr.responseText)
+//         }else{
+//             rejected('Something went wrong')
+//         }
+//     }
+// });
+
+//consuming code.
+
+// console.log(promise);
+// promise.then((data)=>{
+//     console.log(data);
+// }).catch((err)=>{
+//     console.log(err);
+// })
+
+// promise.then((data)=>{
+//     console.log(data);
+// },(err)=>{
+//     console.log(err);
+// })
+
+
+/****************************************************************
+ * What is featch APi in javascript   
+ ****************************************************************/
+
+//the featch API is a modern interface that allows you to make http requests to servers from web browsers.
+//the featch API returns the requested data asa promise, and we can use then and catch method on the promise to handle the data.
+
+//public API
+//REST Countries
+// https://restcountries.com/
+
+//the featch API
+
+// function getCountry(country){
+//     console.log(country);
+//     let promise1=fetch('https://restcountries.com/v3.1/name/'+ country)
+//     promise2=promise1.then((response)=>{
+//         console.log(response);
+//         //json method returns a promise
+//         return response.json();
+//     })
+//     promise2.then((data)=>{
+//         console.log(data);
+//     })
+// }
+
+// getCountry('usa');
+// console.log("aslkdja");
+
+//if the promise is resolved
+//1. the then method attached to that promise will be called
+//2. top the callback function of then method promise will pass the resolved data.
+//3. callback fun of the then method is executed.
+
+
+//remote webserver
+//chain of then method 
+//catch method
+
+
+/****************************************************************
+ * Avoiding callback hell with promises in javascript   
+ ****************************************************************/
+
+//to avoid callback hell with promises in javascript use chain of then method.
+
+// function getCountry(){
+//     fetch('https://restcountries.com/v3.1/name/usa')
+//     .then((response)=>{
+//         return response.json();
+//     })
+//     .then((data)=>{
+//         console.log(data);
+//         return fetch('https://restcountries.com/v3.1/name/brazil')
+//     })
+//     .then((response)=>{
+//         return response.json();
+//     })
+//     .then((data)=>{
+//         console.log(data);
+//         // return fetch('https://restcountries.com/v3.1/name/usa')
+//     })
+//     .catch((error)=>{
+//         console.log(error);
+//     })
+// }
+
+// getCountry()
+
+
+/****************************************************************
+ * Handling Rejected Promises in javascript   
+ ****************************************************************/
+
+// function getCountry(){
+//     fetch('https://restcountries.com/v3.1/name/usa')
+//     .then((response)=>{
+//         return response.json();
+//     })
+//     .then((data)=>{
+//         console.log(data);
+//         return fetch('https://restcountries.com/v3.1/name/brazil')
+//     })
+//     .then((response)=>{
+//         return response.json();
+//     })
+//     .then((data)=>{
+//         console.log(data);
+//         return fetch('https://restcountries.com/v3.1/name/usa')
+//     })
+//     .then((response)=>{
+//         return response.json();
+//     })
+//     .then((data)=>{
+//         console.log(data);
+//         // return fetch('https://restcountries.com/v3.1/name/usa')
+//     })
+//     .catch((error)=>{
+//         // alert(error);
+//         console.log(error.message);
+//     })
+//     .finally(()=>{
+//         console.log('finally blocked is always executed');
+        
+//     })
+// }
+
+// getCountry()
+
+// document.getElementById('btn-load')
+// .addEventListener('click',()=>{
+//     getCountry()
+// })
+
+
+
+/****************************************************************
+ * Throwing Errors Manually in javascript   
+ ****************************************************************/
+
+// function getCountry(){
+//     fetch('https://restcountries.com/v3.1/name/abc')
+//     .then((response)=>{
+//         if(!response.ok){
+//             throw new Error(`Country not found (${response.status})`);
+//         }
+//         return response.json();
+//     })
+//     .then((data)=>{
+//         console.log(data);
+//         return fetch('https://restcountries.com/v3.1/name/brazil')
+//     })
+//     .then((response)=>{
+//         return response.json();
+//     })
+//     .then((data)=>{
+//         console.log(data);
+//         return fetch('https://restcountries.com/v3.1/name/usa')
+//     })
+//     .then((response)=>{
+//         return response.json();
+//     })
+//     .then((data)=>{
+//         console.log(data);
+//         // return fetch('https://restcountries.com/v3.1/name/usa')
+//     })
+//     .catch((error)=>{
+//         alert(error.message);
+//         // console.log(error.message);
+//     })
+//     .finally(()=>{
+//         console.log('finally blocked is always executed');
+//     })
+// }
+
+// // getCountry()
+
+// document.getElementById('btn-load')
+// .addEventListener('click',()=>{
+//     getCountry()
+// })
+
+
+/****************************************************************
+ * Asynchronous Code Execution & event Loop in javascript   
+ ****************************************************************/
+
+//web Api -> Dom  Timer  featch  console.log
+//JS Engine -> Heap and Call Stack
+
+//MicroTask queue -> promise
+
+//CallBack queue ->
+
+//event loop ->
+
+/****************************************************************
+ * Callback queue VS Microtask queue in javascript   
+ ****************************************************************/
+
