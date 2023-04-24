@@ -298,4 +298,215 @@
 /****************************************************************
  * Callback queue VS Microtask queue in javascript   
  ****************************************************************/
+// // console.log(Math.floor(Math.random()*1000000))
+// console.log(Math.random()*10)
 
+
+
+// //6 digit random number generator without random function
+
+// function randomNumber(){
+//     let random = [1,2,3,4,5,6,7,8,9,10]
+    
+   
+// }
+
+// randomNumber();
+
+// console.log(Math.random())
+
+/*********************************************************************************
+//Callback queue VS Mincrotask queue.
+**********************************************************************************/
+// A callback function associated with an asynchronous code  waits for its execution inside either a callback queue or microtask queue.
+
+//Most of the callback functions associated with an asynchronous code, have to wait for their execution in the callback queue
+//But there are some callback functions for example, the callback function associated with the promise
+//waits for the execution in the microtask queue.
+
+//the callback function inthe microtask queue, takes pririty over the callback function in the callback queue i.e,
+//the callback function in microtask queue get executed first.
+
+// console.log("Program start here");
+
+// setTimeout(()=>{
+// console.log('setTimeout executed');
+// },0);
+
+// Promise.resolve('resolve').then((response)=>{
+//     console.log(response);
+//     for(var i=0; i<1000000000; i++){
+        
+//     }
+// })
+// console.log("Program end here");
+
+
+/*********************************************************************************
+//Promisifying Geolocation Api.
+**********************************************************************************/
+
+//Geolocation Api gets the current cordinates of a user.
+// navigator.geolocation.getCurrentPosition(
+//     position=>console.log(position),
+//     err=>console.log(err)
+// )
+
+// let getPosition=function(){
+//     return new Promise(function(resolve,reject){
+//         navigator.geolocation.getCurrentPosition(resolve,reject);
+//     })
+// }
+
+// getPosition().then((pos)=>{
+//     // console.log(pos);
+//     let {latitude:lat,longitude:lng} = pos.coords;
+//     console.log(lat,lng);
+// }).catch((err)=>{
+//     console.log(err.message);
+// })
+
+//geocode.xyz Api.
+
+
+/*********************************************************************************
+//Async & await in Javascript.
+**********************************************************************************/
+//ES2017.
+//async- expects a function asynchronously & returns a promise.
+//await- waits for a promise to be settled.
+//always use together
+
+// let getCountryinfo= async function(){
+//     let response=await fetch('https://restcountries.com/v3.1/name/usa')
+//     let data=await response.json();
+//     console.log(data);
+// }
+
+// getCountryinfo();
+
+
+// let getPosition=function(){
+//     return new Promise(function(resolve,reject){
+//         navigator.geolocation.getCurrentPosition(resolve,reject);
+//     })
+// }
+
+// let displayUserCountry=async function(){
+//     let position = await getPosition();
+//     let {latitude:lat,longitude:lng} = position.coords;
+//     console.log(lat,lng);
+//     let geoResponse= await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
+//     console.log(geoResponse);
+//     let geodata=await geoResponse.json();
+//     console.log("geodata",geodata);
+//     let countryResponse=await fetch(`https://restcountries.com/v3.1/name/${geodata.country}`);
+//     console.log(countryResponse);
+    
+// }
+
+// displayUserCountry()
+
+/*********************************************************************************
+//Error handling with try & catch.
+**********************************************************************************/
+//syntex
+// try{
+
+// }catch(err){
+
+// }
+
+/*********************************************************************************
+//Returning a value from async function
+**********************************************************************************/
+
+// (async function(){
+//     try{
+        // let data=await function();
+        // console.log(data);
+//     }catch(err){
+//         console.log(err);
+//     }
+// })()
+
+
+/*********************************************************************************
+//Running promises in parallel.
+**********************************************************************************/
+// console.log("jhgjkhgjhg");
+// let getData= function(url,error='Something went wrong'){
+//     return fetch(url).then(res=>{
+//         if(!res.ok){
+//             throw new Error(`${error} ${res.status}`)
+//         }
+//         return res.json();
+//     })
+// }
+// let getcountryInfo=async function(){
+//     // let usa=await getData('https://restcountries.com/v3.1/name/usa')
+//     // let [brazil]=await getData('https://restcountries.com/v3.1/name/brazil')
+//     // let [germany]=await getData('https://restcountries.com/v3.1/name/germany')
+//     let data=await Promise.all([getData('https://restcountries.com/v3.1/name/usa'),getData('https://restcountries.com/v3.1/name/brazil'),getData('https://restcountries.com/v3.1/name/germany')])
+//     console.log(data);
+//     // console.log(brazil.name,usa.capital);
+//     // console.log(germany.name,germany.capital);
+// }
+
+// getcountryInfo()
+
+//takes an array of promises.
+//returns anarray of resolved promise data if ll the promise passed to all method is resolved.
+//return the first reject promise data
+
+/*********************************************************************************
+//Promises Combinators: race, allSettled ,any.
+**********************************************************************************/
+//race
+//returns the data of first settell promise.
+// let getData= function(url,error='Something went wrong'){
+//     return fetch(url).then(res=>{
+//         if(!res.ok){
+//             throw new Error(`${error} ${res.status}`)
+//         }
+//         return res.json();
+//     })
+// }
+// let getcountryInfo=async function(){
+//     let data=await Promise.race([getData('https://restcountries.com/v3.1/name/usa'),getData('https://restcountries.com/v3.1/name/brazil'),getData('https://restcountries.com/v3.1/name/germany')])
+//     console.log(data);
+// }
+
+// getcountryInfo()
+
+
+//promise.allSetteled
+//return an array of all the settled promises. ES2020.
+// Promise.allSettled([
+//     Promise.resolve('data 1'),
+//     Promise.reject('data 2'),
+//     Promise.resolve('data 3')
+// ]).then((data)=>{
+//     console.log(data);
+// }).catch(err=>console.log(err))
+
+// Promise.all([
+//     Promise.resolve('data 1'),
+//     Promise.reject('data 2'),
+//     Promise.resolve('data 3')
+// ]).then((data)=>{
+//     console.log(data);
+// }).catch(err=>console.log(err))
+
+
+//Promise.any =ES2021
+//1. takes array of promises.
+//2.Returns the first resolved promise data.
+
+// Promise.any([
+//     Promise.reject('data 1'),
+//     Promise.resolve('data 2'),
+//     Promise.resolve('data 3')
+// ]).then((data)=>{
+//     console.log(data);
+// }).catch(err=>console.log(err))
