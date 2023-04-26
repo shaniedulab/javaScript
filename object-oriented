@@ -1,0 +1,378 @@
+//JavaScript Object Oriented Programming.
+/*********************************************************************************
+//Object oriented programming.
+**********************************************************************************/
+//object oriented programming is a programming paradigm based on the concept of objects.
+//in OOP, we represent real-world entities as an object.
+
+//data- properties of objects.
+//behavior- methods of objects.
+
+//4 pillars of an OOP.
+//1. Inheritance
+//2. Encapsulation
+//3. Abstraction 
+//4. Polymorphism
+
+//Inheritance.
+//Inheritance is a mechanism that allows objects us to create new classes based on an existing class.
+
+// with inheritance, we can reuse an existing code without repeating a code.
+// inheritance is the first pillar of OOP.
+
+//Encapsulation.
+//Encapsulation is the process of hiding data from outside world.
+
+//Abstraction.
+//abstraction is a way of hiding the implementation details and showing only the functionality to the user.
+//in other worlds, it ignores the irrelevant details and shows only the required one.
+
+//Polymorphism
+//Polymorphism means different forms. in OOP, we can write methods with same name but diffrent implementation.
+
+
+/*********************************************************************************
+//Constructor Functions.
+**********************************************************************************/
+
+//A function constructor is a pattern in javascript based on which we can create several object.
+
+//. in simple terms, a constructor function is simply a function which acts as a pattern  or a template for creating objects.
+
+//with constructor function, we can instantiate objects and implement inheritance.
+
+//to define a constructor function, a function is used. it can be a normal function or function expression.
+
+// let Person = function(name,gender,birthYear){
+//         this.name=name;
+//         this.gender=gender;
+//         this.birthYear=birthYear;
+//         this.calcAge=function(){
+//                 let age= new Date().getFullYear()-this.birthYear;
+//                 console.log(age);
+//         }
+// }
+
+// let john=new Person('john','male',1990); //function constructor
+// john.calcAge()
+// console.log(john)
+
+// let merry=new Person('merry','female',1995);
+// merry.calcAge();
+// console.log(merry);
+
+// let steve=new Person('steve','male',1989);
+// merry.calcAge();
+// console.log(steve);
+
+//The new Operator.
+//A new Operator does three things while creating an object using function constructor.
+
+//. the new Operator first create empty object on function constructor.
+//. it also makes sure that the this variable in function constructor point to the newly created empty object.
+//. finally, it returns the object from the function constructor.
+
+/*********************************************************************************
+//Prototype and Inheritance.
+**********************************************************************************/
+//What is Prototype.
+
+//. Each and every javascript object has a prototype property.
+//. inheritance in JS is achieved using this prototype property.
+//. when we attach a property or a method to the prototype property of the object , those properties
+// and methods can be inherited by the instantiated object.
+
+
+// let Person = function(name,gender,birthYear){
+//         this.name=name;
+//         this.gender=gender;
+//         this.birthYear=birthYear;
+// }
+
+// Person.prototype.calcAge=function(){
+//         let age= new Date().getFullYear()-this.birthYear;
+//         console.log(age);
+// }
+// Person.prototype.city='Mumbai';
+
+// let john=new Person('john','male',1990); //function constructor
+// john.calcAge()
+// console.log(john,john.city)
+
+// let merry=new Person('merry','female',1995);
+// merry.calcAge();
+// console.log(merry);
+
+// let steve=new Person('steve','male',1989);
+// merry.calcAge();
+// console.log(steve);
+
+/*********************************************************************************
+//Prototype Chaining.
+**********************************************************************************/
+//Every object we craete in JS is directly or indirectly an instance of object constructor.
+//Person is instance of Object constructor.
+//hasOwnProperty();
+//isPrototypeOf();
+//toString();
+//valueOf();
+//toLocaleString();
+
+// let mark={
+//         name:'mark',
+//         birthYear:1990,
+//         gender:'male'
+// }
+
+// console.log(mark.hasOwnProperty('name'));
+
+// console.log(Person instanceof Object);
+
+
+/*********************************************************************************
+//JavaScript Class.
+**********************************************************************************/
+//introduction in ES6
+//What is Class?
+
+//Classes in JS allows us to create a blueprint and based on the blueprint, we can instantiate objects.
+//classes in JS are different from the traditional classes in other OOPL like java and c++.
+//classes are synthetic sugar of function constructors and prototype inheritance.
+//it is not a new concept in itself.
+
+//2 Ways to craete classes;
+//1. Class declarations
+// class Person{
+
+// }
+
+//2. class expressions
+// let Person=class{
+
+// }
+
+
+// class Person{
+//         constructor(name,birthYear,gender){
+//                 this.name=name;
+//                 this.birthYear=birthYear;
+//                 this.gender=gender;
+//                 // this.calcAge=function(){
+//                 //         console.log(new Date().getFullYear()-this.birthYear);
+//                 // }
+//         }
+//         calcAge(){
+//                 console.log(new Date().getFullYear()-this.birthYear);
+//         }
+// }
+// Person.prototype.greet=function(){
+//         console.log("Good Morning "+this.name);
+// }
+
+// let john=new Person('john',1990,'male');
+// console.log(john);
+// john.calcAge()
+// john.greet()
+// let merry=new Person('merry',1995,'female');
+// console.log(merry);
+
+//1. class cannot be hoisted.
+//2. class are first class citizen.
+//3. classes are executed in strict mode.
+
+/*********************************************************************************
+//JavaScript getters and setters mothods.
+**********************************************************************************/
+//ES5
+//There are tow types of properties in JS 
+//.Data Properties.
+//.Accessor Properties.
+
+//getter properties- read object properties value - get keyword.
+//setter properties- set object properties value  - set keyword.
+
+//Encapsulation - hide data from outside word.
+//set calculation values for a property.
+
+// let john={
+//         name:'john',
+//         birthYear:1990,
+//         AnnualSalary:12000,
+//         get getName(){
+//                 return this.name;
+//         },
+//         set setName(value){
+//                 this.name=value
+//         }
+        
+// }
+
+// console.log(john.getName);
+// john.setName='Shani'
+// console.log(john.getName);
+
+// let User=class{
+//         constructor(name,psd,role){
+//                 this.name=name;
+//                 this.password=psd;
+//                 this.role=role
+//         }
+        
+//         set setPassword(val){
+//                 if(val.length<4){
+//                         console.log("password 4 < ");
+//                 }else{
+//                         this.password=val;
+//                 }
+//         }
+// }
+
+// let mark=new User('mark','pas123','admin');
+// console.log(mark);
+// mark.setPassword='abc123'
+// console.log(mark);
+
+
+/*********************************************************************************
+//Static Methods.
+**********************************************************************************/
+
+//Static Methods are those methods which are associated with class and not with instance methods.
+//use static keyword
+
+// let Person = function(name,gender,birthYear){
+//         this.name=name;
+//         this.gender=gender;
+//         this.birthYear=birthYear;
+        
+// }
+
+// Person.prototype.calcAge=function(){
+//         let age= new Date().getFullYear()-this.birthYear;
+//         console.log(age);
+// }
+
+// Person.greet=function(){
+//         console.log("greeting");
+// }
+
+// let john=new Person('john','male',1990); //function constructor
+// john.calcAge()
+// console.log(john)
+// Person.greet()
+
+/*********************************************************************************
+//Object.create() Methods
+**********************************************************************************/
+
+// let Person={
+//         clacAge(){
+//                 return new Date().getFullYear()-this.birthYear;   
+//         },
+        
+//         greet(){
+//             return 'Have a nice day!'    
+//         },
+        
+//         init(name,gender,birthYear){
+//                 this.name=name;
+//                 this.birthYear=birthYear;
+//                 this.gender=gender;
+//         }
+// }
+
+// let john=Object.create(Person);
+// john.name='john';
+// john.birthYear=1990;
+// john.gender='male';
+// console.log(john);
+// console.log(john.clacAge());
+
+
+// let merry=Object.create(Person,{
+//         name:{value:'merry'},
+//         birthYear:{value:1997},
+//         gender:{value:'female'}
+// })
+
+// console.log(merry);
+
+// let mark=Object.create(Person)
+// mark.init('mark',2002,'male')
+// console.log(mark);
+
+
+/*********************************************************************************
+//Inheritance between functions constructors
+**********************************************************************************/
+
+// let Person= function(name,gender,birthYear){
+//         this.name=name;
+//         this.birthYear=birthYear;
+//         this.gender=gender;
+// }
+
+// Person.prototype.calcAge= function(){
+//         console.log(new Date().getFullYear()-this.birthYear);
+// }
+
+// let john=new Person('john','male',2002)
+// console.log(john);
+
+// let Employee=function(name,gender,birthYear,empid,salary){
+//         Person.call(this,name,gender,birthYear)
+//         // this.name=name;
+//         // this.gender=gender;
+//         // this.birthYear=birthYear;
+//         this.empid=empid;
+//         this.salary=salary;
+// }
+
+// Employee.prototype=Person.prototype //before
+
+// Employee.prototype.calcSalary=function(){
+//         return this.salary*12
+// }
+
+// Employee.prototype.empDetails=function(){
+//         console.log(this.name);
+//         console.log(this.empid);
+// }
+
+// let mark=new Employee('mark', 'male',1995,101,12000);
+// console.log(mark);
+
+/*********************************************************************************
+//Inheritance between class constructors
+**********************************************************************************/
+//javascript class is a syntactic suger of function constructors and prototype inheritance.
+//javascript class is simply an abstraction layer over function constructors.
+// classes are simply a morden way of writing functions constructors with simple syntax.
+//when a class inherits from another class it uses the same concept of function constructors inherited.
+
+// class Person{
+//         constructor(name,gender,birthYear){
+//                 this.name=name;
+//                 this.gender=gender;
+//                 this.birthYear=birthYear;  
+//         }
+        
+//         calcAge(){
+//                 console.log("claaaaaaaaaaaaaaaaaaaa");
+//         }
+// }
+
+// class Employee extends Person{
+//         constructor(name,gender,birthYear,empid,salary){
+//                 super(name,gender,birthYear);
+//                 this.empid=empid;
+//                 this.salary=salary;
+//         }
+        
+//         calcSalary(){
+//                 return this.salary*12
+//         }
+// }
+
+// let mark=new Employee('mark','male',1995,201,12000)
+// console.log(mark);
