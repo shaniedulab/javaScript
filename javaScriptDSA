@@ -1,0 +1,285 @@
+//fibonacci sequence
+//problem:- given a numner n find the first n element of the fibonacci sequence
+//in mathematics, the fibonacci sequence in which each no. is the sum of the two preceding one.
+//the first twe  no. in the sequence are 0 and 1.
+//ex. [0,1,1,2,3,5]
+// function fibonacci(n){
+//     let fib=[0,1];
+//     for(let i=0;i<n;i++){
+//         fib[i+2] = fib[i+1] + fib[i];
+//     }
+//     return fib;
+// }
+
+// console.log(fibonacci(5));
+
+//factorial of a number.
+//problem:- given a integer n find the factorial of that integer.
+// in mathematics the factorial of a non-negative integer n denoted n! is product of all positive integer less then equel to n.
+// factorial of 0 is 1
+//factorial 4=4*3*2*1
+
+// function factorial(n){
+//     let result=1;
+//     for(let i=2;i<=n;i++){
+//         result=result*i;
+//     }
+//     return result;
+// }
+
+// console.log(factorial(5)); //Big O = O(n)
+
+//prime number
+//problem:- given a number n determine if the number isprime or not.
+// A primen number is a natural number greter the 1 that is not a product of 2 smaller natural number.
+// isPrime(5)==true(1*5 or5*1)
+// isPrime=false (1*4 or 2*2 or 4*1)
+
+// function isPrime(n){
+//     if(n<2){
+//         return false;
+//     }
+//     for(let i=2;i<=Math.sqrt(n);i++){
+//         if(n%i===0){
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+
+
+// console.log(isPrime(1));
+// console.log(isPrime(5));
+// console.log(isPrime(4));
+
+//Power of Tow
+//problem:- given a integer n determine if the number is a powerof 2 or not.
+//an integer is a power of two if there exists an integer x such that n=2 isPowerOfTwo(1)=true(2^0)
+//power of two =pseudocode
+/**
+ * n=8
+ * 8/2=4 (remainder 0)
+ * 4/2=2 (remainder 0)
+ * 2/2=1 (remainder 0)
+ * if reminder is not 0 in any step n is not power of two
+ * if remainder is 0 and comes down ti 1 eventally n is a power of two
+ */
+
+// function isPowerOfTwo(n){
+//     if(n<1){
+//         return false;
+//     }
+//     while(n>1){
+//         if(n%2!==0){
+//             return false;
+//         }
+//         n=n/2;
+//     }
+//     return true;
+// }
+
+// console.log(isPowerOfTwo(1));
+// console.log(isPowerOfTwo(2));
+// console.log(isPowerOfTwo(5)); //Big O =O(logn)
+
+// function isPowerOfTwoBitwise(n){
+//     if(n<1){
+//         return false;
+//     }
+//     return (n & (n-1))===0
+// }
+
+// console.log(isPowerOfTwoBitwise(1));
+// console.log(isPowerOfTwoBitwise(2));
+// console.log(isPowerOfTwoBitwise(12)); //Big O =O(1)
+
+//Recursion
+//what?
+
+//Recursion is a problem solving technique where the solution depends on solutions to smaller instances of the problem
+// recursion is whin a function calls itsefe
+
+//why?
+// a greate  techniique to simplify your solution 
+//if you find yourself breaking down your problem into smaller versipon of the same problem is very useful
+
+//Analogy
+
+
+// function recursiveFibonacci(n){
+//     if(n<2){
+//         return n;
+//     }
+//     return recursiveFibonacci(n-1)+recursiveFibonacci(n-2)
+// }
+
+// console.log(recursiveFibonacci(0));
+// console.log(recursiveFibonacci(1));
+// console.log(recursiveFibonacci(6)); //Big O =O(n^2)
+
+// function recursiveFactorial(n){
+//     if(n===0){
+//         return 1;
+//     }
+//     return n*recursiveFactorial(n-1);
+// }
+
+// console.log(recursiveFactorial(0));
+// console.log(recursiveFactorial(1));
+// console.log(recursiveFactorial(5)); //Big O =O(n)
+
+
+// function linearSearch(arr,target){
+//     for(let i=0;i<arr.length;i++){
+//         if(arr[i]==target){
+//             return i;
+//         }
+//     }
+//     return -1
+// }
+
+// console.log(linearSearch([-5,2,10,4,6],10));
+// console.log(linearSearch([-5,2,10,4,6],6));
+// console.log(linearSearch([-5,2,10,4,6],20)); //Big O =O(n)
+
+// function binarySearch(arr,target){
+//     let leftIndex=0;
+//     let rigthIndex=arr.length-1;
+
+//     while(leftIndex<=rigthIndex){
+//         let middleIndex=Math.floor((leftIndex+rigthIndex)/2)
+
+//         if(target===arr[middleIndex]){
+//             return middleIndex;
+//         }
+//         if(target<arr[middleIndex]){
+//             rigthIndex=middleIndex-1;
+//         }
+//         else{
+//             leftIndex=middleIndex+1;
+//         }
+//     }
+//     return -1
+// }
+
+// console.log(binarySearch([-5,2,4,6,10],10));
+// console.log(binarySearch([-5,2,4,6,10],6));
+// console.log(binarySearch([-5,2,4,6,10],20)); //Big O =O(logn)
+
+
+
+// function search(arr,target,leftIndex,rigthIndex){
+//     // console.log(arr,target,leftIndex,rigthIndex);
+//     if(leftIndex>rigthIndex){
+//         return -1;
+//     }
+    
+//     let middleIndex=Math.floor((leftIndex + rigthIndex) / 2);
+//     if(target==arr[middleIndex]){
+//         // console.log("hnkn");
+//         return middleIndex;
+//     }
+//     if(target<arr[middleIndex]){
+//         return search(arr,target,leftIndex,middleIndex-1)
+//     }
+//     else{
+//         return search(arr,target,middleIndex+1,rigthIndex)
+//     }
+// }
+
+// function recursiveBinarySearch(arr,target){
+//     return search(arr,target,0,arr.length-1);
+// }
+
+// console.log(recursiveBinarySearch([-5,2,4,6,10],10));
+// console.log(recursiveBinarySearch([-5,2,4,6,10],6));
+// console.log(recursiveBinarySearch([-5,2,4,6,10],20)); //Big O =O(logn)
+
+// function bubbleSort(arr){
+//     let swapped
+//     do{
+//         swapped=false
+//         for(let i=0;i<arr.length-1;i++){
+//             if(arr[i]>arr[i+1]){
+//                 let temp=arr[i];
+//                 arr[i]=arr[i+1];
+//                 arr[i+1]=temp;
+//                 swapped=true;
+//             }
+//         }
+//     }while(swapped)
+    
+// }
+
+// const arr=[8,20,-2,4,-6]
+// console.log(arr);
+// bubbleSort(arr)
+// console.log(arr); //Big-O=O(n^2)
+
+// function insertaionSort(arr){
+//     for(let i=1;i<arr.length;i++){
+//         let numberToInsert=arr[i];
+//         let j=i-1;
+//         while(j>=0 && arr[j]>numberToInsert){
+//             arr[j+1]=arr[j];
+//             j=j-1
+//         }
+//         arr[j+1]=numberToInsert;
+//     }
+// }
+
+// const arr=[8,20,-2,4,-6]
+// console.log(arr);
+// insertaionSort(arr)
+// console.log(arr); //Big-O=O(n^2)
+
+//  function quickSort(arr){
+//     if(arr.length<2){
+//         return arr;
+//     }
+//     let pivort=arr[arr.length-1];
+//     let left=[];
+//     let rigth=[];
+//     for(let i=0;i<arr.length-1;i++){
+//         if(arr[i]<pivort){
+//             left.push(arr[i]);
+//         }else{
+//             rigth.push(arr[i]);
+//         }
+//     }
+//     return [...quickSort(left),pivort,...quickSort(rigth)]
+//  }
+
+// const arr=[8,20,-2,4,-6]
+// console.log(arr);
+// console.log(quickSort(arr)); //Big-O=O(n^2) 
+
+
+function mergeSort(arr) {
+    console.log(arr);
+    if (arr.length < 2) {
+      return arr;
+    }
+    const mid = Math.floor(arr.length / 2);
+    const leftArr = arr.slice(0, mid);
+    const rightArr = arr.slice(mid);
+    return merge(mergeSort(leftArr), mergeSort(rightArr));
+  }
+  
+  function merge(leftArr, rightArr) {
+    console.log(leftArr, rightArr);
+    const sortedArr = [];
+    while (leftArr.length && rightArr.length) {
+      if (leftArr[0] < rightArr[0]) {
+        sortedArr.push(leftArr.shift());
+      } else {
+        sortedArr.push(rightArr.shift());
+      }
+    }
+    return [...sortedArr, ...leftArr, ...rightArr];
+  }
+  
+  const arr = [8, 20, -2, 4, -6];
+  console.log(arr);
+  console.log(mergeSort(arr));
+   //Big-O=O(nlogn) 
