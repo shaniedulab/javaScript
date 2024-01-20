@@ -2,6 +2,15 @@
 
 //passing function as argument
 /*************************************** */
+*) First-Class Functions can
+//Assigned to variables
+//Passed as arguments to other functions
+//Returned from other functions
+
+*)Higher-Order Functions
+A higher-order function is a function that takes one or more functions as arguments
+or returns a function as its result. Higher-order functions allow for
+the creation of more abstract and reusable code.
 
 let birthYears=[1990,1989,2007,2005,1995,2011]
 
